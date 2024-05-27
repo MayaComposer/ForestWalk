@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Credits/FadeText.gd" type="Script" id=1]
+[ext_resource path="res://DialogueBox/Fonts/GaramondPremrPro-Smbd.otf" type="FontFile" id=2]
+
+[sub_resource type="FontFile" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 512.517, 130.333 )
+
+[node name="FadeText" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+offset_right = 274.0
+offset_bottom = 159.0
+theme_override_fonts/normal_font = SubResource( 1 )
+text = "Made by
+Maya Engel"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 198.729, 471.136 )
+shape = SubResource( 2 )
+
+[node name="FadeIn" type="Tween" parent="."]
+
+[node name="FadeOut" type="Tween" parent="."]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

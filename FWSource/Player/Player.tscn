@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://do7wf1ll51d5p"]
+
+[ext_resource type="Texture2D" uid="uid://kbmg5fwnnrir" path="res://Player/frames_atlas_nodoubles.png" id="1"]
+[ext_resource type="Script" path="res://Player/player.gd" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(25, 166)
+
+[sub_resource type="Animation" id="2"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "walk"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yitgy"]
+_data = {
+"idle": SubResource("2"),
+"walk": SubResource("3")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+hframes = 10
+vframes = 2
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 34)
+shape = SubResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(6, -181)
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 0.28
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yitgy")
+}

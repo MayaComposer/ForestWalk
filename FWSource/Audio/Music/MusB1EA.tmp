@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5fpwtjnrwc0k"]
+
+[ext_resource type="Script" path="res://Audio/Music/MusicManager.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://cr40vfbti70e7" path="res://Audio/Music/FW_Acceptance.ogg" id="2"]
+[ext_resource type="PackedScene" path="res://Audio/Music/Song.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://d4nkjwi5obnm6" path="res://Audio/Music/FW_Anxiety.ogg" id="4"]
+[ext_resource type="AudioStream" uid="uid://17ehdqv5vy2p" path="res://Audio/Music/FW_Denial.ogg" id="5"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1")
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+offset_left = 751.0
+offset_top = 737.0
+offset_right = 907.0
+offset_bottom = 869.0
+text = "xfade"
+
+[node name="Denial" parent="." instance=ExtResource("3")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Denial"]
+stream = ExtResource("5")
+
+[node name="Anxiety" parent="." instance=ExtResource("3")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Anxiety"]
+stream = ExtResource("4")
+
+[node name="Acceptance" parent="." instance=ExtResource("3")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Acceptance"]
+stream = ExtResource("2")
+
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

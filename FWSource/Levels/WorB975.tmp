@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs3vwkuhybt31"]
+
+[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://e65hctiyvr2u" path="res://Objects/pinetree.png" id="2"]
+
+[node name="World" type="Node2D"]
+
+[node name="YSortBG" type="Node2D" parent="."]
+
+[node name="Pinetree3" type="Sprite2D" parent="YSortBG"]
+position = Vector2(172, 232)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-129, -186)
+
+[node name="Pinetree2" type="Sprite2D" parent="YSortBG"]
+position = Vector2(53, 244)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-132, -187)
+
+[node name="Pinetree" type="Sprite2D" parent="YSortBG"]
+position = Vector2(130, 266)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-144, -181)
+
+[node name="Pinetree4" type="Sprite2D" parent="YSortBG"]
+position = Vector2(98, 104)
+texture = ExtResource("2")
+centered = false
+
+[node name="Pinetree14" type="Sprite2D" parent="YSortBG"]
+position = Vector2(214, 269)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-116, -165)
+
+[node name="Pinetree5" type="Sprite2D" parent="YSortBG"]
+position = Vector2(426.876, 337.105)
+scale = Vector2(1.62005, 1.54404)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-128.15, -183.363)
+
+[node name="Pinetree6" type="Sprite2D" parent="YSortBG"]
+position = Vector2(336, 252)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-142, -175)
+
+[node name="Pinetree7" type="Sprite2D" parent="YSortBG"]
+position = Vector2(471, 254)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-108, -192)
+
+[node name="Pinetree8" type="Sprite2D" parent="YSortBG"]
+position = Vector2(390, 181)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-122, -180)
+
+[node name="Pinetree9" type="Sprite2D" parent="YSortBG"]
+position = Vector2(526, 165)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-128, -186)
+
+[node name="Pinetree10" type="Sprite2D" parent="YSortBG"]
+position = Vector2(290, 178)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-126, -186)
+
+[node name="Pinetree11" type="Sprite2D" parent="YSortBG"]
+position = Vector2(566.473, 319.923)
+scale = Vector2(1.31868, 1.31868)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-129, -210)
+
+[node name="Pinetree12" type="Sprite2D" parent="YSortBG"]
+position = Vector2(643, 193)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-135, -194)
+
+[node name="Pinetree13" type="Sprite2D" parent="YSortBG"]
+position = Vector2(710.5, 284.024)
+scale = Vector2(1.37118, 1.38462)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-127.992, -182.74)
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(240, 534)
