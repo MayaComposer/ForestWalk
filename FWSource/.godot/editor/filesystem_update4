@@ -1,7 +1,7 @@
 res://default_env.tres
-res://Player/Player.tscn
 res://Levels/World.tscn
+res://Player/Player.tscn
 res://Audio/Music/MusicManager.tscn
-res://Player/player.gd
 res://Objects/tiles.tscn
 res://Objects/floor.tscn
+res://Player/player.gd
